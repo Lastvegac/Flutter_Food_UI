@@ -10,15 +10,15 @@ class AddToCartButton extends StatelessWidget {
     SizeConfig().init(context);
     return Padding(
       padding: EdgeInsets.fromLTRB(
-          SizeConfig.screenWidth!/20.55,
-          SizeConfig.screenHeight!/34.15,
-          SizeConfig.screenWidth!/20.55,
-          0,
+        SizeConfig.screenWidth! / 40,
+        50,
+        SizeConfig.screenWidth! / 40,
+        25,
       ),
       child: Container(
         decoration: BoxDecoration(
           color: buttonColor,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(48),
         ),
         child: ElevatedButton(
           style: ButtonStyle(
@@ -27,20 +27,32 @@ class AddToCartButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
               ),
             ),
-            minimumSize: MaterialStateProperty.all(Size(SizeConfig.screenWidth!/1.37, SizeConfig.screenHeight!/11.66)),
+            minimumSize: MaterialStateProperty.all(Size(
+                SizeConfig.screenWidth! / 1.5, SizeConfig.screenHeight! / 15)),
             backgroundColor: MaterialStateProperty.all(Colors.transparent),
             shadowColor: MaterialStateProperty.all(Colors.transparent),
           ),
-          onPressed: () { },
+          onPressed: () {
+            Navigator.pop(context);
+          },
           child: Wrap(
             children: [
               Padding(
-                padding: EdgeInsets.only(right: SizeConfig.screenWidth!/51.38),       /// 8.0
-                child: Icon(Icons.shopping_cart_rounded , color: Colors.white,),
+                padding: EdgeInsets.only(right: SizeConfig.screenWidth! / 40),
+
+                /// 8.0
+                child: const Icon(
+                  Icons.shopping_cart_rounded,
+                  color: Colors.white,
+                ),
               ),
               Text(
                 "Add to Cart",
-                style: TextStyle(fontSize: SizeConfig.screenHeight!/34.15,  fontWeight: FontWeight.w700, color: Colors.white,),
+                style: TextStyle(
+                  fontSize: SizeConfig.screenHeight! / 38,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),

@@ -1,13 +1,12 @@
 name: food_order_ui
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
-
 
 dependencies:
   flutter:
@@ -28,9 +27,14 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/images/
     - assets/category/
     - assets/discount/
     - assets/food/
     - assets/main/
 
-
+  fonts:
+    - family: Mulish
+      fonts:
+        - asset: fonts/Mulish-Light.ttf
+        - asset: fonts/Mulish-SemiBold.ttf

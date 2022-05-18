@@ -16,14 +16,18 @@ class _FavoriteCartIconState extends State<FavoriteCartIcon> {
       bottom: 0,
       right: 0,
       child: Container(
-        height: SizeConfig.screenHeight!/13.66,                      /// 50.0
-        width: SizeConfig.screenWidth!/8.22,                         /// 50.0
+        height: SizeConfig.screenHeight! / 14,
+
+        /// 50.0
+        width: SizeConfig.screenWidth! / 8.22,
+
+        /// 50.0
         decoration: BoxDecoration(
-            color: buttonColor,
-            borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(30.0),
-                topLeft: Radius.circular(30.0),
-            ),
+          color: buttonColor,
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(30.0),
+            topLeft: Radius.circular(30.0),
+          ),
         ),
         child: Icon(
           Icons.shopping_cart_rounded,

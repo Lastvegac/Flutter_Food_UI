@@ -14,18 +14,26 @@ class _FoodNameState extends State<FoodName> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Row(
-        children: [
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:[
-                Text("${widget.food.foodName}", style: TextStyle(color: Colors.black, fontSize: SizeConfig.screenHeight!/22.77, fontFamily: "Roboto")),  /// 30
-                Text("Category", style: TextStyle(color: Colors.black45, fontSize: 18)),
-              ]
-          ),
-          Spacer(),
-          Text("\$${widget.food.foodPrice}", style: TextStyle(color: Colors.black87, fontSize: SizeConfig.screenHeight!/22.77),),  /// 30
-        ]
-    );
+    return Row(children: [
+      Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text("${widget.food.foodName}",
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: SizeConfig.screenHeight! / 40,
+                fontFamily: "Roboto")),
+
+        /// 30
+        const Text("Category",
+            style: TextStyle(color: Colors.black45, fontSize: 18)),
+      ]),
+      Spacer(),
+      Text(
+        "\$${widget.food.foodPrice}",
+        style: TextStyle(
+            color: Colors.black87, fontSize: SizeConfig.screenHeight! / 22),
+      ),
+
+      /// 30
+    ]);
   }
 }

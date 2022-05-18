@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_order_ui/view/splash_screen.dart';
-import 'package:food_order_ui/view/start_page/start_page_view.dart';
+import 'package:food_order_ui/view/onboarding_page/widgets/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
-      home: StartPageView(),
-    );
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.orange,
+        ),
+        // home: StartPageView(),
+        home: const OnboardingScreen());
   }
 }

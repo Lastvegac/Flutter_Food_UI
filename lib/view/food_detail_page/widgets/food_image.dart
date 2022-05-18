@@ -22,12 +22,13 @@ class _FoodImageState extends State<FoodImage> {
         color: Colors.orangeAccent,
         image: DecorationImage(
             image: AssetImage("${widget.food.foodImageName}"),
-            fit: BoxFit.fitWidth
-        ),
+            fit: BoxFit.fitWidth),
       ),
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth!/13.7, vertical: SizeConfig.screenHeight!/34.15),     /// 30.0 - 20.0
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+
+          /// 30.0 - 20.0
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

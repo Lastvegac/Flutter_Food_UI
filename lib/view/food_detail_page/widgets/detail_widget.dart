@@ -21,35 +21,36 @@ class _DetailWidgetState extends State<DetailWidget> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      margin: EdgeInsets.only(top: SizeConfig.screenHeight! * 0.35),
+      margin: EdgeInsets.only(top: SizeConfig.screenHeight! * 0.4),
       width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30.0),
-          topRight: Radius.circular(30.0)
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black54,
-            blurRadius: 10,
-            offset: Offset(0,-1)
-          )
-        ]
-      ),
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25.0), topRight: Radius.circular(25.0)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black54, blurRadius: 10, offset: Offset(0, -1))
+          ]),
       child: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(25.0),
         child: Column(
           children: [
             Container(
-              width: SizeConfig.screenWidth!/3.43,        /// 120.0
-              height: SizeConfig.screenHeight!/227.67,    /// 3.0
+              width: SizeConfig.screenWidth! / 4,
+
+              /// 120.0
+              height: SizeConfig.screenHeight! / 228,
+
+              /// 3.0
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.black12
-              ),
+                  color: Colors.black12),
             ),
-            SizedBox(height: SizeConfig.screenHeight!/34.15,),      /// 20.0
+            SizedBox(
+              height: SizeConfig.screenHeight! / 35,
+            ),
+
+            /// 20.0
             FoodName(food: widget.food),
             ReviewStars(),
             FoodDescription(),
