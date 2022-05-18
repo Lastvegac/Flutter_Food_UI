@@ -18,34 +18,38 @@ class _FoodListState extends State<FoodListWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-      EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth!/20),
+      padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth! / 20),
       child: FutureBuilder<List<Food>>(
           future: bringTheFoods(),
-          builder: (context, snapshot){
-            if(snapshot.hasData){
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
               var foodList = snapshot.data;
               return ListView.builder(
                   itemCount: 2,
                   itemBuilder: (context, index) {
                     var food = foodList![index];
                     return Padding(
-                      padding: EdgeInsets.symmetric(vertical: SizeConfig.screenHeight!/68.3),          /// 10.0
+                      padding: EdgeInsets.symmetric(
+                          vertical: SizeConfig.screenHeight! / 68.3),
+
+                      /// 10.0
                       child: Dismissible(
                         key: UniqueKey(),
                         direction: DismissDirection.endToStart,
                         onDismissed: (direction) {
-                          setState(() {
-                          });
+                          setState(() {});
                         },
                         background: Container(
-                          padding: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth!/20.55),    /// 20.0
+                          padding: EdgeInsets.symmetric(
+                              horizontal: SizeConfig.screenWidth! / 20.55),
+
+                          /// 20.0
                           decoration: BoxDecoration(
                             color: Color(0xFFFFE6E6),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Row(
-                            children: [
+                            children: const [
                               Spacer(),
                               Icon(Icons.delete_outline)
                             ],
@@ -61,13 +65,16 @@ class _FoodListState extends State<FoodListWidget> {
                                   blurRadius: 4,
                                   color: Colors.black.withOpacity(0.1),
                                 )
-                              ]
-                          ),
+                              ]),
                           child: Row(
                             children: [
                               FoodImage(foodImage: food.foodImageName),
-                              SizedBox(width: SizeConfig.screenWidth!/20.55),              /// 20.0
-                              FoodText(foodName: food.foodName, foodPrice: food.foodPrice),
+                              SizedBox(width: SizeConfig.screenWidth! / 20.55),
+
+                              /// 20.0
+                              FoodText(
+                                  foodName: food.foodName,
+                                  foodPrice: food.foodPrice),
                               Spacer(),
                               DeleteIconButton(foodName: food.foodName),
                             ],
@@ -75,18 +82,20 @@ class _FoodListState extends State<FoodListWidget> {
                         ),
                       ),
                     );
-                  }
-              );
-            }
-            else{
+                  });
+            } else {
               return SizedBox(
                   child: Center(
-                    child: Lottie.network("https://assets10.lottiefiles.com/packages/lf20_peztuj79.json",
-                        height: SizeConfig.screenHeight!/6.83,      /// 100.0
-                        width: SizeConfig.screenWidth!/4.11,        /// 100.0
-                        repeat: false),
-                  )
-              );
+                child: Lottie.network(
+                    "https://assets10.lottiefiles.com/packages/lf20_peztuj79.json",
+                    height: SizeConfig.screenHeight! / 6.83,
+
+                    /// 100.0
+                    width: SizeConfig.screenWidth! / 4.11,
+
+                    /// 100.0
+                    repeat: false),
+              ));
             }
           }),
     );
